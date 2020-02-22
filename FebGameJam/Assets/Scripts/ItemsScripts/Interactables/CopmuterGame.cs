@@ -48,6 +48,7 @@ public class CopmuterGame : InteractableItem
     {
         if(!inGame)
         {
+            GameObject.FindGameObjectWithTag("MenuBlock").GetComponent<BoxCollider2D>().enabled = true;
             screen.SetActive(true);
             inGame = true;
         }
@@ -77,6 +78,7 @@ public class CopmuterGame : InteractableItem
 
     public void ExitButton()
     {
+        GameObject.FindGameObjectWithTag("MenuBlock").GetComponent<BoxCollider2D>().enabled = false;
         screen.SetActive(false);
         inGame = false;
     }

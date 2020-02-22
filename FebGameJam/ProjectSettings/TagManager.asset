@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Interactables
+  - Tile
+  - Manager
+  - MenuBlock
   layers:
   - Default
   - TransparentFX

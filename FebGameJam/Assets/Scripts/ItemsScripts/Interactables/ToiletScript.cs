@@ -11,7 +11,7 @@ public class ToiletScript : InteractableItem
     public override void Interact()
     {
         base.Interact();
-
+        GameObject.FindGameObjectWithTag("MenuBlock").GetComponent<BoxCollider2D>().enabled = true;
         if (!toiletFinished)
         {
             toiletGame.SetActive(true);

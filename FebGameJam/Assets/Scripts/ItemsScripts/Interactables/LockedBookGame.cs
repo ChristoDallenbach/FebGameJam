@@ -42,6 +42,7 @@ public class LockedBookGame : InteractableItem
     {
         if (!inGame)
         {
+            GameObject.FindGameObjectWithTag("MenuBlock").GetComponent<BoxCollider2D>().enabled = true;
             screen.SetActive(true);
             inGame = true;
         }
@@ -64,13 +65,13 @@ public class LockedBookGame : InteractableItem
 
         if (gameWon)
         {
-            GameObject.Find("InventoryManager").GetComponent<Inventory>().AddNewItem(instantiatedObject, instantiatedObject.GetComponent<GrabableItem>().index);
+            instantiatedObject.GetComponent<GrabableItem>().Interact();
         }
     }
 
     public void ExitButton()
     {
-        screen.SetActive(false);
+        GameObject.FindGameObjectWithTag("MenuBlock").GetComponent<BoxCollider2D>().enabled = false; 
         inGame = false;
     }
 

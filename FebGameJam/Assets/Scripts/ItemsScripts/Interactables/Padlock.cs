@@ -45,6 +45,7 @@ public class Padlock : InteractableItem
         base.Interact();
         if(!solving)
         {
+            GameObject.FindGameObjectWithTag("MenuBlock").GetComponent<BoxCollider2D>().enabled = true;
             screen.SetActive(true);
             solving = true;
             gameObject.GetComponent<SpriteRenderer>().sprite = nuetral;
@@ -76,6 +77,7 @@ public class Padlock : InteractableItem
     public void BackButton()
     {
         ClearButton();
+        GameObject.FindGameObjectWithTag("MenuBlock").GetComponent<BoxCollider2D>().enabled = false;
         screen.SetActive(false);
         solving = false;
     }
