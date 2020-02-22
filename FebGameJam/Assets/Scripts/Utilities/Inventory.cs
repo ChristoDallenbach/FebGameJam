@@ -10,16 +10,19 @@ public class Inventory : MonoBehaviour
     public bool zoom = false;
     private int zoomObject;
 
+    public bool hasKey = false;
+
     public GUISkin mySkin;
-
-    void Start()
-    {
-
-    }
 
     public void AddNewItem(GrabableItem newItem) // Adds items to the list
     {
         items.Add(newItem);
+    }
+
+    public void AddNewItem(GrabableItem newItem, bool key) // Adds items to the list
+    {
+        items.Add(newItem);
+        hasKey = true;
     }
 
     private void OnGUI()
@@ -28,6 +31,7 @@ public class Inventory : MonoBehaviour
         if (zoom) // Draws the zoomed in object
         {
             GUI.Box(new Rect(0, 0, Screen.width, Screen.height), "");
+
             // Display Item and other info
             GUI.Label(new Rect(Screen.width / 2 - 50, Screen.height / 2 - 50, 50, 50), items[zoomObject] + "");
             // Display text that describes the object maybe
