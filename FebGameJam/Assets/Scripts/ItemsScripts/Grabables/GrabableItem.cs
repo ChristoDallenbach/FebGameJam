@@ -18,6 +18,6 @@ public class GrabableItem : ItemScript
         GameObject.Find("InventoryManager").GetComponent<Inventory>().AddNewItem(this);
 
         // destroy the gameobject
-        GameObject.Destroy(gameObject);
+        Destroy(gameObject);
     }
 }
