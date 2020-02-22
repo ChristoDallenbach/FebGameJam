@@ -10,6 +10,8 @@ public class LockedBookGame : InteractableItem
     bool inGame = false;
     bool gameWon = false;
 
+    GameObject item;
+
     new void Start()
     {
         base.Start();
@@ -64,8 +66,7 @@ public class LockedBookGame : InteractableItem
 
         if (gameWon)
         {
-            Debug.Log("Win");
-            // Give Info
+            GameObject.Find("InventoryManager").GetComponent<Inventory>().AddNewItem(item.GetComponent<GrabableItem>(), item.GetComponent<GrabableItem>().index);
         }
     }
 
