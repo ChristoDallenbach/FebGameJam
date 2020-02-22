@@ -10,7 +10,12 @@ public class CopmuterGame : InteractableItem
     bool inGame = false;
     bool gameWon = false;
 
+    public GameObject codeKey;
+
     public string code;
+
+    public GameObject cyper;
+    int index = 8;
 
     private new void Start()
     {
@@ -66,6 +71,7 @@ public class CopmuterGame : InteractableItem
         if(gameWon)
         {
             // Give Info
+            GameObject.Find("InventoryManager").GetComponent<Inventory>().AddNewItem(cyper.GetComponent<GrabableItem>(), index);
         }
     }
 
