@@ -36,7 +36,7 @@ public class Inventory : MonoBehaviour
             GUI.Box(new Rect(0, 0, Screen.width, Screen.height), "");
 
             // Display Item and other info
-            GUI.Label(new Rect(Screen.width / 2, Screen.height / 2, 200, 200), items[zoomObject].objectTexture.texture);
+            GUI.Label(new Rect(Screen.width / 2 - 128, Screen.height / 2 - 128, 256, 256), objectTextures[zoomObject]);
             // Display text that describes the object maybe
 
             if(GUI.Button(new Rect(0, 0, 100, 100), "Back")) // Right click to un-zoom

@@ -10,10 +10,6 @@ public class CopmuterGame : InteractableItem
     bool inGame = false;
     bool gameWon = false;
 
-    public GameObject codeKey;
-
-    public string code;
-
     public GameObject cyper;
     int index = 8;
 
