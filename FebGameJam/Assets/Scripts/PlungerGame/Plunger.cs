@@ -32,7 +32,7 @@ public class Plunger : MonoBehaviour
         numOfPlunges = 0;
         text.text = "";
         
-        HasPlunger();
+        //HasPlunger();
     }
 
     // Update is called once per frame
@@ -77,6 +77,7 @@ public class Plunger : MonoBehaviour
     {
         canBePlayed = true;
         text.text = "E";
+        plunger.gameObject.SetActive(true);
     }
 
     public void FindReward()
@@ -91,5 +92,15 @@ public class Plunger : MonoBehaviour
         }
 
         rewardFinalPos = new Vector3(reward.position.x, reward.position.y + 200);
+    }
+
+    public void HasGoodReward()
+    {
+        goodReward = true;
+    }
+
+    public bool IsBeat()
+    {
+        return gameDone;
     }
 }
