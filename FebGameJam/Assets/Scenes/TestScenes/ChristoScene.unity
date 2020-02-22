@@ -351,6 +351,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Vault
       objectReference: {fileID: 0}
+    - target: {fileID: 2882327712138649892, guid: 7a45cf7fb4ee8f74f9312f73bfe70b9c,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2882327712138649892, guid: 7a45cf7fb4ee8f74f9312f73bfe70b9c,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2882327712138649892, guid: 7a45cf7fb4ee8f74f9312f73bfe70b9c,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8356344743705501142, guid: 7a45cf7fb4ee8f74f9312f73bfe70b9c,
         type: 3}
       propertyPath: m_Sprite
