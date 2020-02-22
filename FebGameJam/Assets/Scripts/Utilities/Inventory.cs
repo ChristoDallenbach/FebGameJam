@@ -4,23 +4,25 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
-    private List<int> items = new List<int>();
+    private List<GrabableItem> items = new List<GrabableItem>();
     private const int MAX_ITEMS = 6;
 
     public bool zoom = false;
     private int zoomObject;
 
+    public bool hasKey = false;
+
     public GUISkin mySkin;
 
-    void Start()
-    {
-        items.Add(2);
-        items.Add(230);
-    }
-
-    public void AddNewItem(int newItem) // Adds items to the list
+    public void AddNewItem(GrabableItem newItem) // Adds items to the list
     {
         items.Add(newItem);
+    }
+
+    public void AddNewItem(GrabableItem newItem, bool key) // Adds items to the list
+    {
+        items.Add(newItem);
+        hasKey = true;
     }
 
     private void OnGUI()
@@ -29,11 +31,12 @@ public class Inventory : MonoBehaviour
         if (zoom) // Draws the zoomed in object
         {
             GUI.Box(new Rect(0, 0, Screen.width, Screen.height), "");
+
             // Display Item and other info
             GUI.Label(new Rect(Screen.width / 2 - 50, Screen.height / 2 - 50, 50, 50), items[zoomObject] + "");
             // Display text that describes the object maybe
 
-            if(Input.GetMouseButtonDown(1)) // Right click to un-zoom
+            if(GUI.Button(new Rect(0, 0, 100, 100), "Back")) // Right click to un-zoom
             {
                 zoom = false;
             }
