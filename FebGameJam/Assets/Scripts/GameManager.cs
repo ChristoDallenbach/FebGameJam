@@ -5,22 +5,12 @@ using UnityEngine;
 public class GameManager : Singleton<GameManager>
 {
     // determines if the game was beaten or not
-    private bool GameWon
-    {
-        set
-        {
-            GameWon = value;
-        }
-        get
-        {
-            return GameWon;
-        }
-    }
+    private bool gameWon;
 
     //constructs the first instance of GameManager
     protected GameManager()
     {
-        GameWon = false;
+        gameWon = false;
     }
 
     //ends the game
@@ -29,10 +19,29 @@ public class GameManager : Singleton<GameManager>
         UnityEngine.SceneManagement.SceneManager.LoadScene("GameOver");
     }
 
+    //ends the game with a win
+    public void WonGame()
+    {
+        gameWon = true;
+        GameOver();
+    }
+
     //starts the game
     public void StartGame()
     {
-        GameWon = false;
+        gameWon = false;
         UnityEngine.SceneManagement.SceneManager.LoadScene("Gameplay");
+    }
+
+    //brings you to the main menu
+    public void MainMenu()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Menu");
+    }
+
+    //returns if the game has been beaten or not
+    public bool IsGameWon()
+    {
+        return gameWon;
     }
 }
