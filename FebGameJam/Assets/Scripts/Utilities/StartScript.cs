@@ -8,6 +8,7 @@ public class StartScript : MonoBehaviour
     [SerializeField] private GameObject[] interactableObjects;
     public int[] code;
     [SerializeField] public GameObject[] prefabs = new GameObject[7];
+    [SerializeField] private GameObject plungerGame;
 
     public Sprite[,] noteSprites;
 
@@ -28,30 +29,39 @@ public class StartScript : MonoBehaviour
     private void RandomizeRoom()
     {
         // randomizing the code
-        RandomizeCode();
+        // RandomizeCode();
 
-        // loop for all the objects that are needed to place
         int i = 0;
-        while(i<6)
+
+        // placing the key either in the toilet or in a random spot
+        int keyInToilet = Random.Range(0, 1);
+        if(keyInToilet == 0)
         {
-            // get a random number from the length of the array
-            int randomNumber = Random.Range(0, interactableObjects.Length - 1);
-
-            // check if the object is available to hold an item i.e. if the item is taken already
-            if (interactableObjects[randomNumber].GetComponent<InteractableItem>().isHolding == true)
-            {
-                continue;
-            }
-
-            // place the object on the item
-            interactableObjects[randomNumber].GetComponent<InteractableItem>().PlaceObject(prefabs[i], i);
-
-            // mark the item as checked
-            interactableObjects[randomNumber].GetComponent<InteractableItem>().isHolding = true;
-
-            // increamenting the loop
+            plungerGame.GetComponent<Plunger>().HasGoodReward();
             i++;
         }
+
+        // loop for all the objects that are needed to place
+        // while(i<6)
+        // {
+        //     // get a random number from the length of the array
+        //     int randomNumber = Random.Range(0, interactableObjects.Length - 1);
+        // 
+        //     // check if the object is available to hold an item i.e. if the item is taken already
+        //     if (interactableObjects[randomNumber].GetComponent<InteractableItem>().isHolding == true)
+        //     {
+        //         continue;
+        //     }
+        // 
+        //     // place the object on the item
+        //     interactableObjects[randomNumber].GetComponent<InteractableItem>().PlaceObject(prefabs[i], i);
+        // 
+        //     // mark the item as checked
+        //     interactableObjects[randomNumber].GetComponent<InteractableItem>().isHolding = true;
+        // 
+        //     // increamenting the loop
+        //     i++;
+        // }
     }
 
     // code to randomize what the code is

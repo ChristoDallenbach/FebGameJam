@@ -15,13 +15,14 @@ public class Plunger : MonoBehaviour
     private int numOfPlunges;
     const int maxPlunges = 10;
     private Transform reward;
+    private Vector3 rewardFinalPos;
 
     // Start is called before the first frame update
     void Start()
     {
         canBePlayed = false;
         gameDone = false;
-        plungerDown = true;
+        plungerDown = false;
 
         visuals = transform.GetChild(2);
         rewards = transform.GetChild(1);
@@ -29,10 +30,10 @@ public class Plunger : MonoBehaviour
         text = visuals.GetChild(0).GetComponent<UnityEngine.UI.Text>();
 
         numOfPlunges = 0;
-        plunger.position = new Vector3(1050, 600);
         text.text = "";
-        
-        HasPlunger();
+
+        gameObject.SetActive(false);
+        //HasPlunger();
     }
 
     // Update is called once per frame
@@ -45,20 +46,20 @@ public class Plunger : MonoBehaviour
 
         if(gameDone)
         {
-            reward.position = Vector3.Lerp(reward.position, new Vector3(1030, 350), 0.1f);
+            reward.position = Vector3.Lerp(reward.position, rewardFinalPos, 0.05f);
             return;
         }
 
         
         if(plungerDown && Input.GetKeyDown(KeyCode.Q))
         {
-            plunger.position = new Vector3(1050, 400);
+            plunger.position = new Vector3(plunger.position.x, plunger.position.y + 100);
             plungerDown = false;
             text.text = "E";
         }
         else if(!plungerDown && Input.GetKeyDown(KeyCode.E))
         {
-            plunger.position = new Vector3(1050, 300);
+            plunger.position = new Vector3(plunger.position.x, plunger.position.y - 100);
             plungerDown = true;
             numOfPlunges++;
             text.text = "Q";
@@ -68,7 +69,7 @@ public class Plunger : MonoBehaviour
         {
             FindReward();
             gameDone = true;
-            plunger.position = new Vector3(1050, 700);
+            plunger.position = new Vector3(plunger.position.x, plunger.position.y + 300);
             text.text = "";
         }
     }
@@ -76,7 +77,8 @@ public class Plunger : MonoBehaviour
     public void HasPlunger()
     {
         canBePlayed = true;
-        text.text = "Q";
+            text.text = "E";
+            plunger.gameObject.SetActive(true);
     }
 
     public void FindReward()
@@ -89,5 +91,17 @@ public class Plunger : MonoBehaviour
         {
             reward = rewards.GetChild(1);
         }
+
+        rewardFinalPos = new Vector3(reward.position.x, reward.position.y + 200);
+    }
+
+    public void HasGoodReward()
+    {
+        goodReward = true;
+    }
+
+    public bool IsBeat()
+    {
+        return gameDone;
     }
 }
