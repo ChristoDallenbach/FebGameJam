@@ -10,6 +10,8 @@ public class CopmuterGame : InteractableItem
     bool inGame = false;
     bool gameWon = false;
 
+    public string code;
+
     private new void Start()
     {
         base.Start();
