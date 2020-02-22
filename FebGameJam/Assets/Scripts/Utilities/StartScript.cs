@@ -95,7 +95,7 @@ public class StartScript : MonoBehaviour
                     break;
 
                 default:
-                    prefabs[i].GetComponent<SpriteRenderer>().sprite = noteSprites[i * 10 + temp - 3] ;
+                    prefabs[i].GetComponent<SpriteRenderer>().sprite = noteSprites[i * 10 + temp - 3];
                     break;
             }
 
