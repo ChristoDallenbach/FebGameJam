@@ -10,6 +10,8 @@ public class StartScript : MonoBehaviour
     [SerializeField] public GameObject[] prefabs = new GameObject[7];
     [SerializeField] private GameObject plungerGame;
 
+    public Sprite[,] noteSprites;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -68,7 +70,29 @@ public class StartScript : MonoBehaviour
         // picking a random one-length number to use as a part of the code
         for(int i = 0; i<4; i++)
         {
-            code[i] = Random.Range(0, 9);
+            int temp = Random.Range(0, 9);
+            code[i] = temp;
+
+            switch(temp)
+            {
+                case 0:
+                    prefabs[i].GetComponent<SpriteRenderer>().sprite = noteSprites[i, 7];
+                    break;
+
+                case 1:
+                    prefabs[i].GetComponent<SpriteRenderer>().sprite = noteSprites[i, 8];
+                    break;
+
+                case 2:
+                    prefabs[i].GetComponent<SpriteRenderer>().sprite = noteSprites[i, 9];
+                    break;
+
+                default:
+                    prefabs[i].GetComponent<SpriteRenderer>().sprite = noteSprites[i, temp - 3];
+                    break;
+            }
+
+            prefabs[i].GetComponent<SpriteRenderer>().sprite = noteSprites[i, temp];
 
             // set the number on the code snippit
             prefabs[i + 2].GetComponentInChildren<TextMesh>().text = code[i].ToString();
