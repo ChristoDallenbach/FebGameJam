@@ -15,7 +15,7 @@ public class Plunger : MonoBehaviour
     private bool gameDone;
     private bool plungerDown;
     private int numOfPlunges;
-    const int maxPlunges = 10;
+    const int maxPlunges = 50;
     private Transform reward;
     private Vector3 rewardFinalPos;
 

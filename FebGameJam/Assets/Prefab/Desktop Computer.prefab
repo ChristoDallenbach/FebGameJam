@@ -96,6 +96,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isHolding: 0
+  placeToPlace: {fileID: 0}
   screen: {fileID: 4170963472891469288}
   tiles:
   - {fileID: 6191534407268218768}
@@ -107,7 +108,7 @@ MonoBehaviour:
   - {fileID: 6494793261622927776}
   - {fileID: 6014844768168683556}
   - {fileID: 8134833560073050075}
-  code: 
+  cyper: {fileID: 542188794675338296, guid: eb6b8f7980b2e3c478e31f4d86fb3d65, type: 3}
 --- !u!61 &5117884544418263975
 BoxCollider2D:
   m_ObjectHideFlags: 0

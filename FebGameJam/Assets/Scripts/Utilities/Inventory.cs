@@ -13,9 +13,18 @@ public class Inventory : MonoBehaviour
 
     public GUISkin mySkin;
 
+    private Texture2D[] objectTextures = new Texture2D[MAX_ITEMS];
+
     public void AddNewItem(GrabableItem newItem, int placement) // Adds items to the list
     {
         items[placement] = newItem;
+
+        Texture2D temp = new Texture2D((int)items[placement].objectTexture.textureRect.width, (int)items[placement].objectTexture.textureRect.height);
+        Color[] pixels = items[placement].objectTexture.texture.GetPixels((int)items[placement].objectTexture.textureRect.x, (int)items[placement].objectTexture.textureRect.y, (int)items[placement].objectTexture.textureRect.width, (int)items[placement].objectTexture.textureRect.height);
+        temp.SetPixels(pixels);
+        temp.Apply();
+        objectTextures[placement] = temp;
+        temp = null;
     }
 
     private void OnGUI()
@@ -26,7 +35,7 @@ public class Inventory : MonoBehaviour
             GUI.Box(new Rect(0, 0, Screen.width, Screen.height), "");
 
             // Display Item and other info
-            GUI.Label(new Rect(Screen.width / 2, Screen.height / 2, 200, 200), items[zoomObject].objectTexture.texture);
+            GUI.Label(new Rect(Screen.width / 2 - 128, Screen.height / 2 - 128, 256, 256), objectTextures[zoomObject]);
             // Display text that describes the object maybe
 
             if(GUI.Button(new Rect(0, 0, 100, 100), "Back")) // Right click to un-zoom
@@ -41,7 +50,7 @@ public class Inventory : MonoBehaviour
             {
                 if (items[i] != null)
                 {
-                    if (GUI.Button(new Rect(Screen.width - 100, (i * (Screen.height / MAX_ITEMS)) + (Screen.height / (MAX_ITEMS * 2)) - 50, 100, 100), items[i].objectTexture.texture))
+                    if (GUI.Button(new Rect(Screen.width - 100, (i * (Screen.height / MAX_ITEMS)) + (Screen.height / (MAX_ITEMS * 2)) - 40, 80, 80), objectTextures[i]))
                     {
                         zoom = true;
                         zoomObject = i;
@@ -50,7 +59,7 @@ public class Inventory : MonoBehaviour
                 // Makes buttons that do nothing when clicked for the empty spaces left over
                 else
                 {
-                    GUI.Button(new Rect(Screen.width - 100, (i * (Screen.height / MAX_ITEMS)) + (Screen.height / (MAX_ITEMS * 2)) - 50, 100, 100), "");
+                    GUI.Button(new Rect(Screen.width - 100, (i * (Screen.height / MAX_ITEMS)) + (Screen.height / (MAX_ITEMS * 2)) - 40, 80, 80), "");
                 }
             }
 

@@ -12,6 +12,6 @@ public class DoorFromBathScript : InteractableItem
         base.Interact();
 
         // move camera towards the main room
-        mainCamera.transform.position = new Vector3(0, 0, -100);
+        mainCamera.transform.position = new Vector3(-120, -120, -100);
     }
 }
