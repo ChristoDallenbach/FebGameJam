@@ -7,7 +7,7 @@ public class StartScript : MonoBehaviour
     // array of all the interactable objects
     [SerializeField] private GameObject[] interactableObjects;
     public int[] code;
-    [SerializeField] private GameObject[] prefabs = new GameObject[6];
+    [SerializeField] public GameObject[] prefabs = new GameObject[7];
 
     // Start is called before the first frame update
     void Start()
@@ -42,7 +42,7 @@ public class StartScript : MonoBehaviour
             }
 
             // place the object on the item
-            interactableObjects[randomNumber].GetComponent<InteractableItem>().PlaceObject(prefabs[i]);
+            interactableObjects[randomNumber].GetComponent<InteractableItem>().PlaceObject(prefabs[i], i);
 
             // mark the item as checked
             interactableObjects[randomNumber].GetComponent<InteractableItem>().isHolding = true;
