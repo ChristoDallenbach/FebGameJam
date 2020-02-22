@@ -20,6 +20,8 @@ public class GrabableItem : ItemScript
         GameObject.Find("InventoryManager").GetComponent<Inventory>().AddNewItem(this, index);
 
         // destroy the gameobject
-        Destroy(gameObject);
+        //Destroy(gameObject);
+        gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        gameObject.GetComponent<BoxCollider2D>().enabled = false;
     }
 }
