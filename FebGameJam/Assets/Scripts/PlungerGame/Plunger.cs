@@ -15,7 +15,7 @@ public class Plunger : MonoBehaviour
     private Transform reward;
 
     // Start is called before the first frame update
-    void Start()
+    new void Start()
     {
         canBePlayed = false;
         gameDone = false;
