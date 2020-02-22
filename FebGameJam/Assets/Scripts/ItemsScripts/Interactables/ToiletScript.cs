@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Toilet : InteractableItem
+public class ToiletScript : InteractableItem
 {
     // boolean for if the toilet minigame has been completed
     bool toiletFinished = false;
+    [SerializeField] private GameObject toiletGame;
 
     public override void Interact()
     {
@@ -13,10 +14,11 @@ public class Toilet : InteractableItem
 
         if (!toiletFinished)
         {
+            toiletGame.SetActive(true);
             // make the toilet canvas active and plunger minigame active if they have plunger
             if (GameObject.Find("InventoryManager").GetComponent<Inventory>().HasPlunger())
             {
-                
+                toiletGame.GetComponent<Plunger>().HasPlunger();
             }
         }
     }
