@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
-    private const int MAX_ITEMS = 7;
-    // (0-Key, 1-Laptop Password, 2-5 Code Snippits, 6-plunger)
+    private const int MAX_ITEMS = 8;
+    // (0-Key, 1-Laptop Password, 2-5 Code Snippits, 6-Plunger, 7-Life Preserver)
     private GrabableItem[] items = new GrabableItem[MAX_ITEMS];
 
     public bool zoom = false;
@@ -42,12 +42,13 @@ public class Inventory : MonoBehaviour
             {
                 if (items[i] != null)
                 {
-                    if (GUI.Button(new Rect(Screen.width - 100, (i * (Screen.height / MAX_ITEMS)) + (Screen.height / (MAX_ITEMS * 2)) - 50, 100, 100), items[zoomObject].objectTexture.texture))
+                    if (GUI.Button(new Rect(Screen.width - 100, (i * (Screen.height / MAX_ITEMS)) + (Screen.height / (MAX_ITEMS * 2)) - 50, 100, 100), items[i].objectTexture.texture))
                     {
                         zoom = true;
                         zoomObject = i;
                     }
                 }
+                // Makes buttons that do nothing when clicked for the empty spaces left over
                 else
                 {
                     GUI.Button(new Rect(Screen.width - 100, (i * (Screen.height / MAX_ITEMS)) + (Screen.height / (MAX_ITEMS * 2)) - 50, 100, 100), "");
@@ -81,6 +82,14 @@ public class Inventory : MonoBehaviour
     public bool HasPlunger()
     {
         if (items[6] != null)
+        {
+            return true;
+        }
+        return false;
+    }
+    public bool HasPreserver()
+    {
+        if(items[7] != null)
         {
             return true;
         }
