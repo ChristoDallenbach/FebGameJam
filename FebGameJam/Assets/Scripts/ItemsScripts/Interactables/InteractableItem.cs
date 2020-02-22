@@ -7,7 +7,7 @@ public class InteractableItem : ItemScript
     // boolean for if it is holding something
     public bool isHolding;
 
-    void Start()
+    protected void Start()
     {
         isHolding = false;
     }
