@@ -8,6 +8,7 @@ public abstract class ItemScript : MonoBehaviour
 
     public void OnMouseDown()
     {
+        Debug.Log("clicky");
         Interact();
     }
 }
