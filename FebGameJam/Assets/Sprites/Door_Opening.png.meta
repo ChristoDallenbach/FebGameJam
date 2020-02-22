@@ -1,7 +1,22 @@
 fileFormatVersion: 2
 guid: a00881e7fa5c7664094083984551b57f
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 4850787967284598525
+    second: Door_Opening_0
+  - first:
+      213: 1004798885628186643
+    second: Door_Opening_1
+  - first:
+      213: -9033677475441360436
+    second: Door_Opening_2
+  - first:
+      213: -7854738112643955481
+    second: Door_Opening_3
+  - first:
+      213: 2894405316013787082
+    second: Door_Opening_4
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -120,7 +135,112 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Door_Opening_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 654
+        height: 2363
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12d65376fc8986742bb6e64cfef3a741
+      internalID: 4850787967284598525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Door_Opening_1
+      rect:
+        serializedVersion: 2
+        x: 932
+        y: 303
+        width: 655
+        height: 1983
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c69dbaf86ab38a42a7fcccae5aebd65
+      internalID: 1004798885628186643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Door_Opening_2
+      rect:
+        serializedVersion: 2
+        x: 2015
+        y: 200
+        width: 656
+        height: 1982
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0659734acca9ef469dd838834daf504
+      internalID: -9033677475441360436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Door_Opening_3
+      rect:
+        serializedVersion: 2
+        x: 3060
+        y: 158
+        width: 361
+        height: 1824
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 892e42386e663944eb17f24a373922c0
+      internalID: -7854738112643955481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Door_Opening_4
+      rect:
+        serializedVersion: 2
+        x: 3619
+        y: 0
+        width: 616
+        height: 2363
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fcb93a0fefa165247b17bc0631ed7f3b
+      internalID: 2894405316013787082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
