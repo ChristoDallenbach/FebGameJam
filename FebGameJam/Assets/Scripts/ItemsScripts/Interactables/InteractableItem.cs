@@ -6,7 +6,7 @@ public class InteractableItem : ItemScript
 {
     // boolean for if it is holding something
     public bool isHolding;
-    private GameObject instantiatedObject;
+    protected GameObject instantiatedObject;
 
     protected void Start()
     {
