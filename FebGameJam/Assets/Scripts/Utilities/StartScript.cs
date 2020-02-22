@@ -28,8 +28,18 @@ public class StartScript : MonoBehaviour
         // randomizing the code
         RandomizeCode();
 
-        // loop for all the objects that are needed to place
         int i = 0;
+
+        // placing the key either in the toilet or in a random spot
+        int keyInToilet = Random.Range(0, 1);
+        if(keyInToilet == 0)
+        {
+            GameObject.Find("PlungerGame").GetComponent<Plunger>.HasGoodReward();
+            i++;
+        }
+
+        // loop for all the objects that are needed to place
+        
         while(i<6)
         {
             // get a random number from the length of the array
