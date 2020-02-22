@@ -15,7 +15,6 @@ public class Inventory : MonoBehaviour
 
     public void AddNewItem(GrabableItem newItem, int placement) // Adds items to the list
     {
-        Debug.Log("hooplah");
         items[placement] = newItem;
     }
 
