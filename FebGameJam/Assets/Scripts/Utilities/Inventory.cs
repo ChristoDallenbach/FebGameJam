@@ -17,7 +17,6 @@ public class Inventory : MonoBehaviour
 
     public void AddNewItem(GrabableItem newItem, int placement) // Adds items to the list
     {
-        Debug.Log("hooplah");
         items[placement] = newItem;
 
         Texture2D temp = new Texture2D((int)items[placement].objectTexture.textureRect.width, (int)items[placement].objectTexture.textureRect.height);

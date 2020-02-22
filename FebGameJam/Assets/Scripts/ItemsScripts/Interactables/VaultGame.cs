@@ -31,7 +31,7 @@ public class VaultGame : InteractableItem
         correctActionTime = 0.0f;
         code = new int[3];
         countDone = 0;
-        turningRight = false;
+        turningRight = true;
         inGame = false;
 
         code[0] = Random.Range(0, 180);
@@ -71,29 +71,27 @@ public class VaultGame : InteractableItem
     private void UserInput()
     {
         // user presses q go right
-        if (Input.GetKey(KeyCode.Q))
+        if (Input.GetKey(KeyCode.Q) && turningRight)
         {
             nextActionTime += Time.deltaTime;
-            if (nextActionTime >= .1f)
+            if (nextActionTime >= .05f)
             {
                 vaultNum++;
                 if (vaultNum == 181) { vaultNum = 0; }
-                vaultKnob.transform.Rotate(new Vector3(0, 0, 1));
-                turningRight = true;
-                nextActionTime %= .1f;
+                vaultKnob.transform.Rotate(new Vector3(0, 0, 2));
+                nextActionTime %= .05f;
             }
         }
         // user presses e go left
         else if (Input.GetKey(KeyCode.E))
         {
             nextActionTime += Time.deltaTime;
-            if (nextActionTime >= .1f)
+            if (nextActionTime >= .05f && !turningRight)
             {
                 vaultNum--;
                 if (vaultNum == -1) { vaultNum = 180; }
-                vaultKnob.transform.Rotate(new Vector3(0, 0, -1));
-                turningRight = false;
-                nextActionTime %= .1f;
+                vaultKnob.transform.Rotate(new Vector3(0, 0, -2));
+                nextActionTime %= .05f;
             }
         }
     }
@@ -104,18 +102,26 @@ public class VaultGame : InteractableItem
         // if user is on the number wait a second if they are still on it while going in the right direction
         if (code[countDone] == vaultNum && ((turningRight && countDone % 2 == 0) || (!turningRight && countDone % 2 == 1)))
         {
-            vaultKnob.GetComponent<UnityEngine.UI.Image>().color = Color.red;
+            screen.transform.GetChild(2).GetComponent<UnityEngine.UI.Image>().color = Color.red;
             correctActionTime += Time.deltaTime;
             if (correctActionTime >= 2f)
             {
                 countDone++;
-                vaultKnob.GetComponent<UnityEngine.UI.Image>().color = Color.white;
+                screen.transform.GetChild(2).GetComponent<UnityEngine.UI.Image>().color = Color.white;
                 correctActionTime %= 2f;
+            }
+            if(countDone % 2 == 0)
+            {
+                turningRight = true;
+            }
+            else
+            {
+                turningRight = false;
             }
         }
         else
         {
-            vaultKnob.GetComponent<UnityEngine.UI.Image>().color = Color.white;
+            screen.transform.GetChild(2).GetComponent<UnityEngine.UI.Image>().color = Color.white;
         }
     }
 
@@ -135,11 +141,11 @@ public class VaultGame : InteractableItem
     {
         if(countDone%2 == 0)
         {
-            screen.transform.GetChild(3).GetComponent<UnityEngine.UI.Text>().text = "Q";
+            screen.transform.GetChild(4).GetComponent<UnityEngine.UI.Text>().text = "Q";
         }
         else
         {
-            screen.transform.GetChild(3).GetComponent<UnityEngine.UI.Text>().text = "E";
+            screen.transform.GetChild(4).GetComponent<UnityEngine.UI.Text>().text = "E";
         }
     }
 
