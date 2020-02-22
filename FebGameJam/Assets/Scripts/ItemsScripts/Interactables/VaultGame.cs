@@ -34,9 +34,9 @@ public class VaultGame : InteractableItem
         turningRight = false;
         inGame = false;
 
-        code[0] = Random.Range(0, 360);
-        code[1] = Random.Range(0, 360);
-        code[2] = Random.Range(0, 360);
+        code[0] = Random.Range(0, 180);
+        code[1] = Random.Range(0, 180);
+        code[2] = Random.Range(0, 180);
 
         screen.SetActive(false);
     }
@@ -74,26 +74,26 @@ public class VaultGame : InteractableItem
         if (Input.GetKey(KeyCode.Q))
         {
             nextActionTime += Time.deltaTime;
-            if (nextActionTime >= .2f)
+            if (nextActionTime >= .1f)
             {
                 vaultNum++;
-                if (vaultNum == 361) { vaultNum = 0; }
+                if (vaultNum == 181) { vaultNum = 0; }
                 vaultKnob.transform.Rotate(new Vector3(0, 0, 1));
                 turningRight = true;
-                nextActionTime %= .2f;
+                nextActionTime %= .1f;
             }
         }
         // user presses e go left
         else if (Input.GetKey(KeyCode.E))
         {
             nextActionTime += Time.deltaTime;
-            if (nextActionTime >= .2f)
+            if (nextActionTime >= .1f)
             {
                 vaultNum--;
-                if (vaultNum == -1) { vaultNum = 360; }
+                if (vaultNum == -1) { vaultNum = 180; }
                 vaultKnob.transform.Rotate(new Vector3(0, 0, -1));
                 turningRight = false;
-                nextActionTime %= .2f;
+                nextActionTime %= .1f;
             }
         }
     }
