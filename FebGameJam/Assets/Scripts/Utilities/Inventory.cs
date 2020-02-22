@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
-    private const int MAX_ITEMS = 8;
+    private const int MAX_ITEMS = 9;
     // (0-Key, 1-Laptop Password, 2-5 Code Snippits, 6-Plunger, 7-Life Preserver)
     private GrabableItem[] items = new GrabableItem[MAX_ITEMS];
 
