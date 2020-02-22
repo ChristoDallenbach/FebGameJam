@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isHolding: 0
-  toiletGame: {fileID: 0}
+  toiletGame: {fileID: 530269027}
 --- !u!212 &7778450
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -242,6 +242,12 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 9.72, y: 16}
   m_EdgeRadius: 0
+--- !u!1 &530269027 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5076295740807537965, guid: e4ac6c6ae1438d440bffcf85d591ca72,
+    type: 3}
+  m_PrefabInstance: {fileID: 5076295740615173710}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &551307016
 GameObject:
   m_ObjectHideFlags: 0
