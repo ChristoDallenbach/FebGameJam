@@ -15,16 +15,17 @@ public class Plunger : MonoBehaviour
     private Transform reward;
 
     // Start is called before the first frame update
-    void Start()
+    new void Start()
     {
         canBePlayed = false;
         gameDone = false;
         plungerDown = true;
         visuals = transform.GetChild(1);
         rewards = transform.GetChild(0);
-        visuals.GetChild(1).GetComponent<RectTransform>().position = new Vector3(775, 500, 0);
+        visuals.GetChild(1).position = new Vector3(1.3f, 1.75f, 1);
+        visuals.GetComponentInChildren<UnityEngine.UI.Text>().text = "";
         numOfPlunges = 0;
-        //HasPlunger();
+        HasPlunger();
     }
 
     // Update is called once per frame
@@ -39,28 +40,28 @@ public class Plunger : MonoBehaviour
         {
             if(Input.GetKeyDown(KeyCode.Q) && plungerDown)
             {
-                visuals.GetChild(1).GetComponent<RectTransform>().position = new Vector3(775, 300, 0);
-                visuals.GetChild(0).GetComponent<UnityEngine.UI.Text>().text = "E";
+                visuals.GetChild(1).position = new Vector3(1.3f, 0.32f, 1);
+                visuals.GetComponentInChildren<UnityEngine.UI.Text>().text = "E";
                 plungerDown = false;
             }
             else if (Input.GetKeyDown(KeyCode.E) && !plungerDown)
             {
-                visuals.GetChild(1).GetComponent<RectTransform>().position = new Vector3(775, 200, 0);
+                visuals.GetChild(1).position = new Vector3(1.3f, -1.5f, 1);
                 plungerDown = true;
-                visuals.GetChild(0).GetComponent<UnityEngine.UI.Text>().text = "Q";
+                visuals.GetComponentInChildren<UnityEngine.UI.Text>().text = "Q";
                 numOfPlunges++;
             }
         } 
         else
         {
-            reward.position = Vector3.Lerp(reward.position, new Vector3(1.0f, -0.45f), 0.1f);
+            reward.position = Vector3.Lerp(reward.position, new Vector3(1.0f, -0.45f, 1), 0.1f);
         }
 
         if(numOfPlunges >= maxPlunges)
         {
             gameDone = true;
-            visuals.GetChild(0).GetComponent<UnityEngine.UI.Text>().text = "";
-            visuals.GetChild(1).GetComponent<RectTransform>().position = new Vector3(775, 800, 0);
+            visuals.GetComponentInChildren<UnityEngine.UI.Text>().text = "";
+            visuals.GetChild(1).position = new Vector3(1.3f, 3.85f, 1);
             FindReward();
         }
     }
@@ -68,7 +69,7 @@ public class Plunger : MonoBehaviour
     public void HasPlunger()
     {
         canBePlayed = true;
-        visuals.GetChild(0).GetComponent<UnityEngine.UI.Text>().text = "Q";
+        visuals.GetComponentInChildren<UnityEngine.UI.Text>().text = "Q";
         visuals.GetChild(1).gameObject.SetActive(true);
     }
 

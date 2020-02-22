@@ -24,7 +24,7 @@ public class VaultGame : InteractableItem
     private bool inGame;
 
     // Start is called before the first frame update
-    void Start()
+    new void Start()
     {
         vaultNum = 0;
         nextActionTime = 0.0f;
