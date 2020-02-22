@@ -9,8 +9,7 @@ public class StartScript : MonoBehaviour
     public int[] code;
     [SerializeField] public GameObject[] prefabs = new GameObject[5];
     [SerializeField] private GameObject plungerGame;
-
-    [SerializeField] public Sprite[,] noteSprites;
+    public Sprite[] noteSprites;
 
     // Start is called before the first frame update
     void Start()
@@ -81,24 +80,26 @@ public class StartScript : MonoBehaviour
             int temp = Random.Range(0, 9);
             code[i] = temp;
 
-           // switch(temp)
-           // {
-           //     case 0:
-           //         prefabs[i].GetComponent<SpriteRenderer>().sprite = noteSprites[i, 7];
-           //         break;
-           //
-           //     case 1:
-           //         prefabs[i].GetComponent<SpriteRenderer>().sprite = noteSprites[i, 8];
-           //         break;
-           //
-           //     case 2:
-           //         prefabs[i].GetComponent<SpriteRenderer>().sprite = noteSprites[i, 9];
-           //         break;
-           //
-           //     default:
-           //         prefabs[i].GetComponent<SpriteRenderer>().sprite = noteSprites[i, temp - 3];
-           //         break;
-           // }
+            switch (temp)
+            {
+                case 0:
+                    prefabs[i].GetComponent<SpriteRenderer>().sprite = noteSprites[i * 10 + 7];
+                    break;
+
+                case 1:
+                    prefabs[i].GetComponent<SpriteRenderer>().sprite = noteSprites[i * 10 + 8];
+                    break;
+
+                case 2:
+                    prefabs[i].GetComponent<SpriteRenderer>().sprite = noteSprites[i * 10 + 9];
+                    break;
+
+                default:
+                    prefabs[i].GetComponent<SpriteRenderer>().sprite = noteSprites[i * 10 + temp - 3] ;
+                    break;
+            }
+
+            prefabs[i].transform.localScale = new Vector2(0.5f, 0.5f);
         }
     }
 }
