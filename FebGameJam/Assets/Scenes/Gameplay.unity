@@ -990,7 +990,7 @@ PrefabInstance:
     - target: {fileID: 5076295740807537965, guid: e4ac6c6ae1438d440bffcf85d591ca72,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5076295741614160477, guid: e4ac6c6ae1438d440bffcf85d591ca72,
         type: 3}
@@ -1255,6 +1255,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1330719036}
   - component: {fileID: 1330719035}
+  - component: {fileID: 1330719037}
   m_Layer: 0
   m_Name: InventoryManager
   m_TagString: Untagged
@@ -1290,6 +1291,29 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1330719037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1330719034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff47403ff31c18b46a7c0e86f9c543a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactableObjects: []
+  code: 
+  prefabs:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  plungerGame: {fileID: 518223831}
 --- !u!1 &1344518984
 GameObject:
   m_ObjectHideFlags: 0

@@ -31,7 +31,8 @@ public class Plunger : MonoBehaviour
 
         numOfPlunges = 0;
         text.text = "";
-        
+
+        gameObject.SetActive(false);
         //HasPlunger();
     }
 
@@ -76,8 +77,8 @@ public class Plunger : MonoBehaviour
     public void HasPlunger()
     {
         canBePlayed = true;
-        text.text = "E";
-        plunger.gameObject.SetActive(true);
+            text.text = "E";
+            plunger.gameObject.SetActive(true);
     }
 
     public void FindReward()
