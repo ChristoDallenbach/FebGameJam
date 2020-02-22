@@ -8,7 +8,7 @@ public class InteractableItem : ItemScript
     public bool isHolding;
     private GameObject instantiatedObject;
 
-    void Start()
+    protected void Start()
     {
         isHolding = false;
     }
