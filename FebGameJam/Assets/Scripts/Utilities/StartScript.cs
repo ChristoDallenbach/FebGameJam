@@ -75,8 +75,20 @@ public class StartScript : MonoBehaviour
 
             switch(temp)
             {
-                case 7:
-                    prefabs[i].GetComponent<SpriteRenderer>().sprite = noteSprites[i, temp];
+                case 0:
+                    prefabs[i].GetComponent<SpriteRenderer>().sprite = noteSprites[i, 7];
+                    break;
+
+                case 1:
+                    prefabs[i].GetComponent<SpriteRenderer>().sprite = noteSprites[i, 8];
+                    break;
+
+                case 2:
+                    prefabs[i].GetComponent<SpriteRenderer>().sprite = noteSprites[i, 9];
+                    break;
+
+                default:
+                    prefabs[i].GetComponent<SpriteRenderer>().sprite = noteSprites[i, temp - 3];
                     break;
             }
 
