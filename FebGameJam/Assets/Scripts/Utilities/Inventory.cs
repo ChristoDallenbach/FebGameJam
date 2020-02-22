@@ -4,26 +4,19 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
-    private List<GrabableItem> items = new List<GrabableItem>();
-    private const int MAX_ITEMS = 6;
+    private const int MAX_ITEMS = 7;
+    // (0-Key, 1-Laptop Password, 2-5 Code Snippits, 6-plunger)
+    private GrabableItem[] items = new GrabableItem[MAX_ITEMS];
 
     public bool zoom = false;
     private int zoomObject;
 
-    public bool hasKey = false;
-
     public GUISkin mySkin;
 
-    public void AddNewItem(GrabableItem newItem) // Adds items to the list
+    public void AddNewItem(GrabableItem newItem, int placement) // Adds items to the list
     {
         Debug.Log("hooplah");
-        items.Add(newItem);
-    }
-
-    public void AddNewItem(GrabableItem newItem, bool key) // Adds items to the list
-    {
-        items.Add(newItem);
-        hasKey = true;
+        items[placement] = newItem;
     }
 
     private void OnGUI()
@@ -45,19 +38,52 @@ public class Inventory : MonoBehaviour
         else // Draws the other items and blank spots if not zoomed in
         {
 
-            for (int i = 0; i < items.Count; i++) // Makes buttons that do something when clicked for items that currently exist
+            for (int i = 0; i < MAX_ITEMS; i++) // Makes buttons that do something when clicked for items that currently exist
             {
-                if (GUI.Button(new Rect(Screen.width - 100, (i * (Screen.height / MAX_ITEMS)) + (Screen.height / (MAX_ITEMS * 2)) - 50, 100, 100), items[zoomObject].objectTexture.texture))
+                if (items[i] != null)
                 {
-                    zoom = true;
-                    zoomObject = i;
+                    if (GUI.Button(new Rect(Screen.width - 100, (i * (Screen.height / MAX_ITEMS)) + (Screen.height / (MAX_ITEMS * 2)) - 50, 100, 100), items[zoomObject].objectTexture.texture))
+                    {
+                        zoom = true;
+                        zoomObject = i;
+                    }
+                }
+                else
+                {
+                    GUI.Button(new Rect(Screen.width - 100, (i * (Screen.height / MAX_ITEMS)) + (Screen.height / (MAX_ITEMS * 2)) - 50, 100, 100), "");
                 }
             }
 
-            for (int i = items.Count; i < MAX_ITEMS; i++) // Makes buttons that do nothing when clicked for the empty spaces left over
-            {
-                GUI.Button(new Rect(Screen.width - 100, (i * (Screen.height / MAX_ITEMS)) + (Screen.height / (MAX_ITEMS * 2)) - 50, 100, 100), "");
-            }
+            //for (int i = items.Count; i < MAX_ITEMS; i++) // Makes buttons that do nothing when clicked for the empty spaces left over
+            //{
+            //    
+            //}
         }
+    }
+
+    // (0-Key, 1-Laptop Password, 2-5 Code Snippits, 6-plunger)
+    public bool HasKey()
+    {
+        if(items[0] != null)
+        {
+            return true;
+        }
+        return false;
+    }
+    public bool HasPassword()
+    {
+        if (items[1] != null)
+        {
+            return true;
+        }
+        return false;
+    }
+    public bool HasPlunger()
+    {
+        if (items[6] != null)
+        {
+            return true;
+        }
+        return false;
     }
 }

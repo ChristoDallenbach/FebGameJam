@@ -6,6 +6,8 @@ public class GrabableItem : ItemScript
 {
     // sprite for drawing to inventory
     public Sprite objectTexture;
+    // (0-Key, 1-Laptop Password, 2-5 Code Snippits, 6-plunger)
+    public int index;
 
     // put item into empty inventory spot
     public override void Interact()
@@ -15,7 +17,7 @@ public class GrabableItem : ItemScript
         objectTexture = gameObject.GetComponent<SpriteRenderer>().sprite;
 
         // get the inventory manager   
-        GameObject.Find("InventoryManager").GetComponent<Inventory>().AddNewItem(this);
+        GameObject.Find("InventoryManager").GetComponent<Inventory>().AddNewItem(this, index);
 
         // destroy the gameobject
         GameObject.Destroy(gameObject);
