@@ -15,7 +15,6 @@ public class CopmuterGame : InteractableItem
     private new void Start()
     {
         base.Start();
-        //screen = Instantiate(screen);
         screen.SetActive(false);
     }
 
