@@ -50,8 +50,12 @@ public class VaultGame : InteractableItem
         // checking if the user is on the right space of knob
         CheckKnob();
 
+        
         // check if they have won
         CheckWin();
+
+        // check if need to change the controls
+        CheckControl();
     }
 
     public override void Interact()
@@ -123,6 +127,19 @@ public class VaultGame : InteractableItem
         {
             inGame = false;
             Destroy(gameObject);
+        }
+    }
+
+    // checking if need to change control text
+    private void CheckControl()
+    {
+        if(countDone%2 == 0)
+        {
+            screen.transform.GetChild(3).GetComponent<UnityEngine.UI.Text>().text = "Q";
+        }
+        else
+        {
+            screen.transform.GetChild(3).GetComponent<UnityEngine.UI.Text>().text = "E";
         }
     }
 
