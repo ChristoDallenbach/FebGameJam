@@ -62,18 +62,10 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    // (0-Key, 1-Laptop Password, 2-5 Code Snippits, 6-plunger)
+    // (0-4 Code Snippits, 5-Plunger, 6-Life Preserver, 7-Key )
     public bool HasKey()
     {
-        if(items[0] != null)
-        {
-            return true;
-        }
-        return false;
-    }
-    public bool HasPassword()
-    {
-        if (items[1] != null)
+        if(items[7] != null)
         {
             return true;
         }
@@ -89,7 +81,7 @@ public class Inventory : MonoBehaviour
     }
     public bool HasPreserver()
     {
-        if(items[7] != null)
+        if(items[6] != null)
         {
             return true;
         }

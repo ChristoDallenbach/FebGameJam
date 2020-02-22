@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Plunger : MonoBehaviour
 {
+
+    [SerializeField] private GameObject key;
     private Transform visuals;
     private Transform rewards;
     private Transform plunger;
@@ -71,14 +73,15 @@ public class Plunger : MonoBehaviour
             gameDone = true;
             plunger.position = new Vector3(plunger.position.x, plunger.position.y + 300);
             text.text = "";
+            GetReward();
         }
     }
 
     public void HasPlunger()
     {
         canBePlayed = true;
-            text.text = "E";
-            plunger.gameObject.SetActive(true);
+        text.text = "E";
+        plunger.gameObject.SetActive(true);
     }
 
     public void FindReward()
@@ -100,8 +103,12 @@ public class Plunger : MonoBehaviour
         goodReward = true;
     }
 
-    public bool IsBeat()
+    public void GetReward()
     {
-        return gameDone;
+        if (goodReward)
+        {
+            key.GetComponent<GrabableItem>().Interact();
+            //GameObject.Find("InventoryManager").GetComponent<Inventory>().AddNewItem( key.GetComponent<GrabableItem>(), 7);
+        }
     }
 }

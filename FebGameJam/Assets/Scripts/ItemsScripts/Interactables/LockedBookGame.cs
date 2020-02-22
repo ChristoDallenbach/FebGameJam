@@ -64,8 +64,7 @@ public class LockedBookGame : InteractableItem
 
         if (gameWon)
         {
-            Debug.Log("Win");
-            // Give Info
+            GameObject.Find("InventoryManager").GetComponent<Inventory>().AddNewItem(instantiatedObject, instantiatedObject.GetComponent<GrabableItem>().index);
         }
     }
 
