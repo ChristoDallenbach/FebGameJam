@@ -25,7 +25,7 @@ public class Plunger : MonoBehaviour
         visuals.GetChild(1).position = new Vector3(1.3f, 1.75f, visuals.GetChild(1).position.z);
         visuals.GetComponentInChildren<UnityEngine.UI.Text>().text = "";
         numOfPlunges = 0;
-        HasPlunger();
+        //HasPlunger();
     }
 
     // Update is called once per frame
@@ -46,7 +46,7 @@ public class Plunger : MonoBehaviour
             }
             else if (Input.GetKeyDown(KeyCode.E) && !plungerDown)
             {
-                visuals.GetChild(1).position = new Vector3(1.3f, -1.5f, 1);
+                visuals.GetChild(1).position = new Vector3(1.3f, -1.5f, visuals.GetChild(1).position.z);
                 plungerDown = true;
                 visuals.GetComponentInChildren<UnityEngine.UI.Text>().text = "Q";
                 numOfPlunges++;
