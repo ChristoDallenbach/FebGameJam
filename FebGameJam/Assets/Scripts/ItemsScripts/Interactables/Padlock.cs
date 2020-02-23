@@ -36,7 +36,7 @@ public class Padlock : InteractableItem
     {
         if(!solved && solving)
         {
-            CheckInput();
+            //CheckInput();
         }
     }
 
@@ -54,8 +54,7 @@ public class Padlock : InteractableItem
 
     void CheckInput()
     {
-        Debug.Log(unlockCode);
-        if(unlockCode.ToString() == input)
+        if(unlockCode.Contains(input))
         {
             solved = true;
             gameObject.GetComponent<SpriteRenderer>().sprite = correct;
@@ -88,6 +87,7 @@ public class Padlock : InteractableItem
         if(numsInput == 3)
         {
             input += num;
+            CheckInput();
             numsInput++;
         }
         else if(numsInput < 3)
