@@ -22,9 +22,9 @@ public class Padlock : InteractableItem
     new void Start()
     {
         base.Start();
-        for (int i = 1; i < GameObject.FindGameObjectWithTag("Manager").GetComponent<StartScript>().code.Length; i++)
+        for (int i = 0; i < GameObject.FindGameObjectWithTag("Manager").GetComponent<StartScript>().code.Length; i++)
         {
-            unlockCode += GameObject.FindGameObjectWithTag("Manager").GetComponent<StartScript>().code + " ";
+            unlockCode += GameObject.FindGameObjectWithTag("Manager").GetComponent<StartScript>().code[i] + " ";
         }
         gameObject.GetComponent<SpriteRenderer>().sprite = nuetral;
 
@@ -54,7 +54,8 @@ public class Padlock : InteractableItem
 
     void CheckInput()
     {
-        if(unlockCode == input)
+        Debug.Log(unlockCode);
+        if(unlockCode.ToString() == input)
         {
             solved = true;
             gameObject.GetComponent<SpriteRenderer>().sprite = correct;

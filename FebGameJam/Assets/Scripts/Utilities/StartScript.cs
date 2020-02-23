@@ -12,7 +12,7 @@ public class StartScript : MonoBehaviour
     public Sprite[] noteSprites;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         // getting all the interactable objects
         interactableObjects = GameObject.FindGameObjectsWithTag("Interactables");
