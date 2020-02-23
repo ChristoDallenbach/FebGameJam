@@ -36,7 +36,7 @@ public class GameManager : Singleton<GameManager>
         firstTime = false;
         if(startGame)
         {
-            UnityEngine.SceneManagement.SceneManager.LoadScene("Opening Cutscene");
+            UnityEngine.SceneManagement.SceneManager.LoadScene("OpeningCutscene");
         }
         else
         {

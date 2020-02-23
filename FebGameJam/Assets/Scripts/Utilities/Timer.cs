@@ -21,14 +21,18 @@ public class Timer : MonoBehaviour
         currentTime += Time.deltaTime;
         if(currentTime >= timeTotal)
         {
-            GameObject.FindGameObjectWithTag("Manager").GetComponent<GameManager>().GameOver();
+            GameManager.Instance.GameOver();
         }
     }
 
     private void OnGUI()
     {
         GUI.skin = mySkin;
-        double temp = (timeTotal - currentTime) / 60;
-        GUI.Box(new Rect(10, 10, 200, 40), "Time Left: " + Math.Round(temp, (2)));
+        double temp = (timeTotal - currentTime);
+        int seconds = (int)temp % 60;
+        string secStr = seconds.ToString();
+        if(seconds < 10) { secStr = "0" + secStr; }
+        int minutes = (int)temp / 60;
+        GUI.Box(new Rect(10, 10, 200, 100), minutes + ":" + secStr);
     }
 }

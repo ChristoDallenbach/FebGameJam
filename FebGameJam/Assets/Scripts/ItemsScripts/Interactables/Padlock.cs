@@ -59,11 +59,13 @@ public class Padlock : InteractableItem
             solved = true;
             gameObject.GetComponent<SpriteRenderer>().sprite = correct;
             BackButton();
+            GameManager.Instance.WonGame();
         }
         else if(numsInput == 4)
         {
             gameObject.GetComponent<SpriteRenderer>().sprite = incorrect;
             BackButton();
+            GameManager.Instance.GameOver();
         }
     }
 
