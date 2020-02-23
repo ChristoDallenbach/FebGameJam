@@ -21,7 +21,7 @@ public class Timer : MonoBehaviour
         currentTime += Time.deltaTime;
         if(currentTime >= timeTotal)
         {
-            GameManager.Instance.GameOver();
+            UnityEngine.SceneManagement.SceneManager.LoadScene("GameOver");
         }
     }
 

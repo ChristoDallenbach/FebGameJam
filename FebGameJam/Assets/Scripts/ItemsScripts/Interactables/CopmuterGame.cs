@@ -101,46 +101,13 @@ public class CopmuterGame : InteractableItem
                 tiles[3].GetComponent<Image>().color = Color.white;
             }
 
-            if (tiles[2].GetComponent<Image>().color == Color.white)
+            if (tiles[6].GetComponent<Image>().color == Color.white)
             {
-                tiles[2].GetComponent<Image>().color = Color.black;
+                tiles[6].GetComponent<Image>().color = Color.black;
             }
             else
             {
-                tiles[2].GetComponent<Image>().color = Color.white;
-            }
-
-            if (tiles[8].GetComponent<Image>().color == Color.white)
-            {
-                tiles[8].GetComponent<Image>().color = Color.black;
-            }
-            else
-            {
-                tiles[8].GetComponent<Image>().color = Color.white;
-            }
-        }
-    }
-
-    public void ButtonTwo()
-    {
-        if (!gameWon)
-        {
-            if (tiles[1].GetComponent<Image>().color == Color.white)
-            {
-                tiles[1].GetComponent<Image>().color = Color.black;
-            }
-            else
-            {
-                tiles[1].GetComponent<Image>().color = Color.white;
-            }
-
-            if (tiles[3].GetComponent<Image>().color == Color.white)
-            {
-                tiles[3].GetComponent<Image>().color = Color.black;
-            }
-            else
-            {
-                tiles[3].GetComponent<Image>().color = Color.white;
+                tiles[6].GetComponent<Image>().color = Color.white;
             }
 
             if (tiles[7].GetComponent<Image>().color == Color.white)
@@ -163,10 +130,28 @@ public class CopmuterGame : InteractableItem
         }
     }
 
-    public void ButtonThree()
+    public void ButtonTwo()
     {
         if (!gameWon)
         {
+            if (tiles[2].GetComponent<Image>().color == Color.white)
+            {
+                tiles[2].GetComponent<Image>().color = Color.black;
+            }
+            else
+            {
+                tiles[2].GetComponent<Image>().color = Color.white;
+            }
+
+            if (tiles[1].GetComponent<Image>().color == Color.white)
+            {
+                tiles[1].GetComponent<Image>().color = Color.black;
+            }
+            else
+            {
+                tiles[1].GetComponent<Image>().color = Color.white;
+            }
+
             if (tiles[4].GetComponent<Image>().color == Color.white)
             {
                 tiles[4].GetComponent<Image>().color = Color.black;
@@ -184,6 +169,39 @@ public class CopmuterGame : InteractableItem
             {
                 tiles[5].GetComponent<Image>().color = Color.white;
             }
+        }
+    }
+
+    public void ButtonThree()
+    {
+        if (!gameWon)
+        {
+            if (tiles[0].GetComponent<Image>().color == Color.white)
+            {
+                tiles[0].GetComponent<Image>().color = Color.black;
+            }
+            else
+            {
+                tiles[0].GetComponent<Image>().color = Color.white;
+            }
+
+            if (tiles[3].GetComponent<Image>().color == Color.white)
+            {
+                tiles[3].GetComponent<Image>().color = Color.black;
+            }
+            else
+            {
+                tiles[3].GetComponent<Image>().color = Color.white;
+            }
+
+            if (tiles[4].GetComponent<Image>().color == Color.white)
+            {
+                tiles[4].GetComponent<Image>().color = Color.black;
+            }
+            else
+            {
+                tiles[4].GetComponent<Image>().color = Color.white;
+            }
 
             if (tiles[6].GetComponent<Image>().color == Color.white)
             {
@@ -192,15 +210,6 @@ public class CopmuterGame : InteractableItem
             else
             {
                 tiles[6].GetComponent<Image>().color = Color.white;
-            }
-
-            if (tiles[2].GetComponent<Image>().color == Color.white)
-            {
-                tiles[2].GetComponent<Image>().color = Color.black;
-            }
-            else
-            {
-                tiles[2].GetComponent<Image>().color = Color.white;
             }
         }
     }
@@ -227,13 +236,13 @@ public class CopmuterGame : InteractableItem
                 tiles[7].GetComponent<Image>().color = Color.white;
             }
 
-            if (tiles[4].GetComponent<Image>().color == Color.white)
+            if (tiles[2].GetComponent<Image>().color == Color.white)
             {
-                tiles[4].GetComponent<Image>().color = Color.black;
+                tiles[2].GetComponent<Image>().color = Color.black;
             }
             else
             {
-                tiles[4].GetComponent<Image>().color = Color.white;
+                tiles[2].GetComponent<Image>().color = Color.white;
             }
 
             if (tiles[0].GetComponent<Image>().color == Color.white)

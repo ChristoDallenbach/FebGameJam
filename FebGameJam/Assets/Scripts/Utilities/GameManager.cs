@@ -43,6 +43,7 @@ public class GameManager : Singleton<GameManager>
         {
             UnityEngine.SceneManagement.SceneManager.LoadScene("Gameplay");
         }
+        Destroy(this.gameObject);
     }
 
     //brings you to the main menu

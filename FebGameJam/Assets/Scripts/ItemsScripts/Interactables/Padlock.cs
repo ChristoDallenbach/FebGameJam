@@ -59,14 +59,14 @@ public class Padlock : InteractableItem
         {
             solved = true;
             gameObject.GetComponent<SpriteRenderer>().sprite = correct;
+            UnityEngine.SceneManagement.SceneManager.LoadScene("GameWon");
             BackButton();
-            GameManager.Instance.WonGame();
         }
         else if(numsInput == 4)
         {
             gameObject.GetComponent<SpriteRenderer>().sprite = incorrect;
+            UnityEngine.SceneManagement.SceneManager.LoadScene("GameOver");
             BackButton();
-            GameManager.Instance.GameOver();
         }
     }
 
@@ -91,13 +91,14 @@ public class Padlock : InteractableItem
         {
             input += num;
             numsInput++;
+            textField.GetComponent<Text>().text = input;
             CheckInput();
         }
         else if(numsInput < 3)
         {
             input += num + " ";
             numsInput++;
+            textField.GetComponent<Text>().text = input;
         }
-        textField.GetComponent<Text>().text = input;
     }
 }
