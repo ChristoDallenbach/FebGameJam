@@ -34,7 +34,7 @@ public class Padlock : InteractableItem
     // Update is called once per frame
     void Update()
     {
-        if(!solved)
+        if(!solved && solving)
         {
             CheckInput();
         }
