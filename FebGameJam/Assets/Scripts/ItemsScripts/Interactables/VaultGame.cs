@@ -61,7 +61,7 @@ public class VaultGame : InteractableItem
     public override void Interact()
     {
         base.Interact();
-        if (!inGame)
+        if (!inGame && GameObject.Find("Basement_chair").GetComponent<ChairScript>().isStanding)
         {
             screen.SetActive(true);
             inGame = true;
