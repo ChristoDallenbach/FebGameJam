@@ -54,6 +54,7 @@ public class Padlock : InteractableItem
 
     void CheckInput()
     {
+        Debug.Log("checking");
         if(unlockCode.Contains(input))
         {
             solved = true;
@@ -89,8 +90,8 @@ public class Padlock : InteractableItem
         if(numsInput == 3)
         {
             input += num;
-            CheckInput();
             numsInput++;
+            CheckInput();
         }
         else if(numsInput < 3)
         {

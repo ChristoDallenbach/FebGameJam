@@ -18,6 +18,7 @@ public class GameManager : Singleton<GameManager>
     //ends the game
     public void GameOver()
     {
+        Debug.Log("Called");
         UnityEngine.SceneManagement.SceneManager.LoadScene("GameOver");
     }
 
