@@ -12,7 +12,7 @@ public class StartScript : MonoBehaviour
     public Sprite[] noteSprites;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         // getting all the interactable objects
         interactableObjects = GameObject.FindGameObjectsWithTag("Interactables");
@@ -56,7 +56,7 @@ public class StartScript : MonoBehaviour
         }
 
         // placing the key either in the toilet or in a random spot
-        int keyInToilet = Random.Range(0, 1);
+        int keyInToilet = Random.Range(0, 2);
         if (keyInToilet == 0)
         {
             plungerGame.GetComponent<Plunger>().HasGoodReward();
