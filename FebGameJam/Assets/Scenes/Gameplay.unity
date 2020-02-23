@@ -1023,7 +1023,7 @@ SpriteRenderer:
   m_Size: {x: 17.8, y: 11.01}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &525520315
@@ -2644,6 +2644,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 229729336}
     m_Modifications:
+    - target: {fileID: 3744865278366272741, guid: 83814d66f7a399e4db53d7838aad6219,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.3
+      objectReference: {fileID: 0}
     - target: {fileID: 3744865279602213185, guid: 83814d66f7a399e4db53d7838aad6219,
         type: 3}
       propertyPath: m_Name
@@ -2795,6 +2800,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9004422585716017145, guid: d9a91c899ddd4e843911a7ea14aa29ca,
+        type: 3}
+      propertyPath: index
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9a91c899ddd4e843911a7ea14aa29ca, type: 3}
@@ -3187,7 +3197,7 @@ PrefabInstance:
     - target: {fileID: 4032375230262406668, guid: 0ae727691170df7409cda18675a5f70c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.7
+      value: -1.61
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ae727691170df7409cda18675a5f70c, type: 3}
@@ -3263,6 +3273,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4092804137658987790, guid: f1097794009e0b549bda8a899e4e072a,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.93
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f1097794009e0b549bda8a899e4e072a, type: 3}
 --- !u!1001 &6203673798400605288
@@ -3331,6 +3346,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Right_Pic
+      objectReference: {fileID: 0}
+    - target: {fileID: 3620429583862930573, guid: 00e862b8d85c64e498a02feefa023bda,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 00e862b8d85c64e498a02feefa023bda, type: 3}
@@ -3415,6 +3435,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 229729336}
     m_Modifications:
+    - target: {fileID: 6411804764697311, guid: 90d94123a04d4234abb171294ac416a5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.3
+      objectReference: {fileID: 0}
     - target: {fileID: 4504932280249029381, guid: 90d94123a04d4234abb171294ac416a5,
         type: 3}
       propertyPath: m_LocalPosition.x

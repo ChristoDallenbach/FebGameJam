@@ -74,24 +74,24 @@ public class VaultGame : InteractableItem
         if (Input.GetKey(KeyCode.Q) && turningRight)
         {
             nextActionTime += Time.deltaTime;
-            if (nextActionTime >= .05f)
+            if (nextActionTime >= .025f)
             {
                 vaultNum++;
                 if (vaultNum == 181) { vaultNum = 0; }
                 vaultKnob.transform.Rotate(new Vector3(0, 0, 2));
-                nextActionTime %= .05f;
+                nextActionTime %= .025f;
             }
         }
         // user presses e go left
         else if (Input.GetKey(KeyCode.E))
         {
             nextActionTime += Time.deltaTime;
-            if (nextActionTime >= .05f && !turningRight)
+            if (nextActionTime >= .025f && !turningRight)
             {
                 vaultNum--;
                 if (vaultNum == -1) { vaultNum = 180; }
                 vaultKnob.transform.Rotate(new Vector3(0, 0, -2));
-                nextActionTime %= .05f;
+                nextActionTime %= .025f;
             }
         }
     }
@@ -104,11 +104,11 @@ public class VaultGame : InteractableItem
         {
             screen.transform.GetChild(2).GetComponent<UnityEngine.UI.Image>().color = Color.red;
             correctActionTime += Time.deltaTime;
-            if (correctActionTime >= 2f)
+            if (correctActionTime >= 1f)
             {
                 countDone++;
                 screen.transform.GetChild(2).GetComponent<UnityEngine.UI.Image>().color = Color.white;
-                correctActionTime %= 2f;
+                correctActionTime %= 1f;
             }
             if(countDone % 2 == 0)
             {

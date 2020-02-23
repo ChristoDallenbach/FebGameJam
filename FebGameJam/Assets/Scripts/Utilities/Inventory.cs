@@ -89,7 +89,7 @@ public class Inventory : MonoBehaviour
     }
     public bool HasPreserver()
     {
-        if(items[6] != null)
+        if(items[5] != null)
         {
             return true;
         }
