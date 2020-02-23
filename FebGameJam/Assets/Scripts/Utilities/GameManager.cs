@@ -6,11 +6,13 @@ public class GameManager : Singleton<GameManager>
 {
     // determines if the game was beaten or not
     private bool gameWon;
+    private bool firstTime;
 
     //constructs the first instance of GameManager
     protected GameManager()
     {
         gameWon = false;
+        firstTime = true;
     }
 
     //ends the game
@@ -30,7 +32,16 @@ public class GameManager : Singleton<GameManager>
     public void StartGame()
     {
         gameWon = false;
-        UnityEngine.SceneManagement.SceneManager.LoadScene("Gameplay");
+        bool startGame = firstTime;
+        firstTime = false;
+        if(startGame)
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadScene("Opening Cutscene");
+        }
+        else
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadScene("Gameplay");
+        }
     }
 
     //brings you to the main menu
