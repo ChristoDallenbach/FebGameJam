@@ -65,13 +65,15 @@ public class LockedBookGame : InteractableItem
 
         if (gameWon)
         {
+            Debug.Log("win");
             instantiatedObject.GetComponent<GrabableItem>().Interact();
         }
     }
 
     public void ExitButton()
     {
-        GameObject.FindGameObjectWithTag("MenuBlock").GetComponent<BoxCollider2D>().enabled = false; 
+        GameObject.FindGameObjectWithTag("MenuBlock").GetComponent<BoxCollider2D>().enabled = false;
+        screen.SetActive(false);
         inGame = false;
     }
 

@@ -13,5 +13,8 @@ public class DoorToBathScript : InteractableItem
 
         // move camera to bathroom
         mainCamera.transform.position = new Vector3(-131, 25, -100);
+
+        GameObject.Find("Spy").transform.position = new Vector3(-123f, 16.7f, -3f);
+        GameObject.Find("Spy").transform.localScale = new Vector3(.7f, .7f, .7f);
     }
 }

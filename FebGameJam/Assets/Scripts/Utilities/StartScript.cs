@@ -44,7 +44,7 @@ public class StartScript : MonoBehaviour
             {
                 continue;
             }
-        
+            
             // place the object on the item
             interactableObjects[randomNumber].GetComponent<InteractableItem>().PlaceObject(prefabs[i], i);
         
@@ -64,7 +64,7 @@ public class StartScript : MonoBehaviour
         }
         else
         {
-            GameObject.Find("Rug").GetComponent<InteractableItem>().PlaceObject(prefabs[i], i);
+            GameObject.Find("Rug").GetComponent<InteractableItem>().PlaceObject(prefabs[i], 7);
             GameObject.Find("Rug").GetComponent<InteractableItem>().isHolding = true;
             i++;
         }
