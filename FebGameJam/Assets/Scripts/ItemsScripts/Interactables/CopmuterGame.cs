@@ -11,7 +11,7 @@ public class CopmuterGame : InteractableItem
     bool gameWon = false;
 
     public GameObject cyper;
-    int index = 8;
+    int index = 4;
 
     private new void Start()
     {
